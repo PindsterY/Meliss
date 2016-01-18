@@ -1,4 +1,4 @@
-<?php namespace Halo;
+<?php
 
 /**
  * Class auth authenticates user and permits to check if the user has been logged in
@@ -15,7 +15,7 @@ class Auth
         if (isset($_SESSION['user_id'])) {
             $this->logged_in = TRUE;
             $user = get_first("SELECT *
-                                       FROM users
+                                       FROM user
                                        WHERE user_id = '{$_SESSION['user_id']}'");
             $this->load_user_data($user);
 
@@ -39,7 +39,7 @@ class Auth
         if (isset($_POST['username'])) {
             $username = $_POST['username'];
             $password = $_POST['password'];
-            $user = get_first("SELECT user_id, is_admin FROM users
+            $user = get_first("SELECT * FROM user
                                 WHERE username = '$username'
                                   AND password = '$password'
                                   AND  deleted = 0");

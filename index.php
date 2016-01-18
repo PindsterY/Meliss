@@ -1,10 +1,6 @@
-<?php namespace Halo;
-
-// Init composer auto-loading
-require 'vendor/autoload.php';
-
+<?php
 // Project constants
-define('PROJECT_NAME', 'meliss');
+define('PROJECT_NAME', 'Meliss');
 define('DEFAULT_CONTROLLER', 'welcome');
 define('DEBUG', false);
 

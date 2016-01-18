@@ -11,7 +11,7 @@
     <title><?= PROJECT_NAME ?></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/components/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/components/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <style>
@@ -33,6 +33,8 @@
 <body>
 
 <!-- Fixed navbar -->
+<? if ($auth->is_admin): // if is logged in(as admin), show navbar?>
+
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -45,29 +47,16 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="halo">Halo admin</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sample dropdown <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
+                <li <?= $controller == "houses"?'class="active"':"" ?>> <a href="houses"> <? __('Houses')?></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="..">Sample item</a></li>
-                <li class="active"><a href="./">Sample active item</a></li>
+                <li><a href="logout">Log Out</a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->
     </div>
 </div>
+<? endif; ?>
 
 <div class="container">
 
@@ -82,7 +71,7 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="vendor/components/jquery/jquery.min.js"></script>
-<script src="vendor/components/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/components/jquery/1.10.2/jquery-1.10.2.min.js"></script>
+<script src="assets/components/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </body>
 </html>

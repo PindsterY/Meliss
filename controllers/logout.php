@@ -1,4 +1,4 @@
-<?php namespace Halo;
+<?php
 
 /**
  * Created by PhpStorm.
@@ -8,7 +8,7 @@
  */
 class logout extends Controller
 {
-    public $requires_auth = false;
+
 
     function index()
     {
